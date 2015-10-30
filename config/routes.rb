@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   # Routes for the Director resource:
   # CREATE
   get('/directors/new_form', { :controller => 'directors', :action => 'new_form' })
-  get('/create_director', { :controller => 'director', :action => 'create_row' })
+  get('/create_director', { :controller => 'directors', :action => 'create_row' })
 
   # READ
   get('/directors', { :controller => 'directors', :action => 'index' })
-  get('/directors/id', { :controller => 'directors', :action => 'show' })
+  get('/directors/:id', { :controller => 'directors', :action => 'show' })
 
   # UPDATE
   get('/directors/:id/edit_form', { :controller => 'directors', :action => 'edit_form' })
@@ -54,6 +54,8 @@ Rails.application.routes.draw do
   #------------------------------
 
   # Routes for the Actor resource:
+  get('/actors/index', { :controller => 'actors', :action => 'index' })
+
   # CREATE
   get('/actors/new_form', { :controller => 'actors', :action => 'new_form' })
   get('/create_actor', { :controller => 'actors', :action => 'create_row' })
